@@ -12,7 +12,13 @@ const Operation = sequelize.define('Operation', {
     },
     category: {
         type: DataTypes.STRING
-    }
+    },
+    date: {
+      type: DataTypes.STRING
+    },
+    type: {
+      type: DataTypes.STRING
+    },
   }, {
     timestamps: false
 });

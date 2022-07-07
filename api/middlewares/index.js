@@ -10,10 +10,10 @@ exports.validateToken = (req,res,next) => {
 
     token = token.replace('Bearer ', '')
 
-    jwt.verify(token, 'password', function(err, decoded) {
+    jwt.verify(token, 'password', function(err, data) {
         if(err) return res.status(401).json({msg: 'Token Invalido'})
         
-        req.token = token
+        req.data = data
 
         next()
     });

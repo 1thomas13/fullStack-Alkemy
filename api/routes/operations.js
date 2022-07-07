@@ -4,12 +4,12 @@ const {validateToken} = require('../middlewares')
 
 const router = express.Router()
 
-router.get('/:userId', validateToken, getAll)
+router.get('/', validateToken, getAll)
 
-router.post('/:userId', validateToken, createOperation)
+router.post('/', validateToken, createOperation)
 
-router.patch('/:userId', validateToken, editOperation)
+router.patch('/:operationId', validateToken, editOperation)
 
-router.delete('/:userId/:operationId', validateToken,  deleteOperation)
+router.delete('/:operationId', validateToken,  deleteOperation)
 
 module.exports = router
